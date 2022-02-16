@@ -9,7 +9,7 @@ body {
   font-family: "Markazi Text", serif;
 }
 #sidebar {
-  @apply bg-white dark:bg-darkBlack shadow;
+  @apply bg-white dark:bg-darkBlack;
   width: 17.25rem;
   height: 100%;
   position: fixed;
@@ -92,60 +92,76 @@ body {
   @apply block;
 }
 
-#shadow {
+.shadow {
   @apply z-[312];
 }
 
-#shadow.active {
-  @apply absolute top-0 left-0 w-full h-full opacity-30 bg-slate-300;
+.shadow.active {
+  @apply z-[312] absolute top-0 left-0 w-full h-full opacity-30 bg-slate-300;
 }
 
 #main-nav {
-  @apply  flex justify-between items-center dark:bg-darkBlack bg-white p-1 md:p-4 md:pr-[50px] md:pl-[50px] shadow shadow-slate-100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  &-box {
+    width: 80%;
+    max-width: 1200px;
+    height: 100px;
+    background-color: white;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &-logo {
-    @apply w-[10%] flex justify-end;
+    width: 25%;
     img {
-      @apply rounded-full w-[50px] h-[50px];
+      width: 50px;
+    min-width: 50px;
+    height: 50px;
+      @apply rounded-full;
     }
   }
-
   &-search {
-    @apply flex justify-center items-center  w-[50%] relative;
-    svg {
-      width: 18px;
-      height: 18px;
-      @apply absolute left-[0px] ml-2 text-black;
-    }
-    input {
-      @apply border-none outline-none text-right w-full;
-      @apply bg-slate-200 rounded p-2 placeholder:text-slate-500 placeholder-shown:text-slate-500;
-    }
-  }
-  &-account-profile {
+    width: 50%;
+    height: 40px;
     @apply relative;
-    img {
-      @apply w-[50px] h-[50px] cursor-pointer rounded-full;
+    input{
+      direction: rtl;
+      @apply w-full bg-slate-100 outline-none border-none p-3 rounded text-right;
+      height: 40px;
     }
-    &-list {
-      @apply dark:text-white z-[313] hidden absolute   w-[200px] text-right rounded shadow-slate-800 shadow;
-      & > li {
-        @apply flex p-2 text-right rounded;
-        &:hover {
-          @apply text-blue-400 bg-blue-100;
-        }
-        & a {
-          @apply flex justify-end text-right w-full;
-          svg {
-            @apply ml-2;
-          }
-        }
-      }
-      &.active {
-        @apply block absolute  bg-white dark:bg-darkBlack left-[-10px] p-5  w-[200px] text-right;
-      }
+    svg {
+      width: 20px;
+      font-size: 15px;
+      @apply text-darkBlack absolute left-2 top-[10px];
     }
   }
-  &-left {
-    @apply w-[10%];
+  &-profile{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+    &-img{
+      width: 50px;
+      height: 50px;
+      @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
+    }
+    &-list{
+      direction: rtl;
+      @apply hidden absolute z-[313] w-full bg-white p-4 w-[200px] mt-[50px];
+     li a{
+        display: flex;
+        direction: rtl;
+        @apply p-2 w-full hover:bg-blue-100 hover:text-blue-400;
+        svg{
+          margin-left: 5px
+        }
+      }
+      &.active{
+        @apply flex flex-col;
+      }
+    }
   }
 }
