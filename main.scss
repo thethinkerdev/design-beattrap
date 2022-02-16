@@ -1,0 +1,151 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  @apply bg-gray-300;
+}
+* {
+  font-family: "Markazi Text", serif;
+}
+#sidebar {
+  @apply bg-white dark:bg-darkBlack shadow;
+  width: 17.25rem;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 20px 0 20px;
+  right: -300px;
+  transition: 0.5s ease-in-out;
+  overflow: auto;
+  z-index: 313;
+}
+#logo-box {
+  @apply flex justify-center;
+}
+#sidebar img {
+  width: 50px;
+  height: 50px;
+  @apply rounded-full;
+}
+
+#sidebar svg {
+  width: 25px;
+  height: 25px;
+}
+#sidebar ul li {
+  @apply w-[90%] ml-2 p-2  rounded text-right border-r-2 border-transparent cursor-pointer;
+  svg {
+    @apply ml-2;
+  }
+}
+#sidebar ul li:hover {
+  @apply border-r-2  border-solid bg-blue-100;
+}
+
+#sidebar ul li:hover {
+  a,
+  svg {
+    @apply text-blue-500;
+  }
+}
+
+#sidebar-close {
+  @apply top-[10px] left-[10px] flex items-center justify-center cursor-pointer;
+  width: 10px;
+  height: 10px;
+  font-size: 45px;
+  font-weight: bold;
+}
+#sidebar.active {
+  right: 0;
+}
+
+#sidebar-search-box {
+  display: flex;
+  align-items: center;
+  @apply rounded;
+  padding: 10px;
+  margin: 10px;
+}
+
+#sidebar-search-box input {
+  display: flex;
+  text-align: right;
+  outline: none;
+  border: none;
+  @apply w-full p-2 rounded text-slate-700 bg-slate-300 placeholder:text-slate-500;
+}
+#sidebar-search-box svg {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  @apply text-gray-500;
+}
+#sidebar ul li ul {
+  display: none;
+  transition: 0.6s all ease-in-out;
+}
+#sidebar ul li:hover > ul {
+  @apply block;
+}
+
+#shadow {
+  @apply z-[312];
+}
+
+#shadow.active {
+  @apply absolute top-0 left-0 w-full h-full opacity-30 bg-slate-300;
+}
+
+#main-nav {
+  @apply  flex justify-between items-center dark:bg-darkBlack bg-white p-1 md:p-4 md:pr-[50px] md:pl-[50px] shadow shadow-slate-100;
+  &-logo {
+    @apply w-[10%] flex justify-end;
+    img {
+      @apply rounded-full w-[50px] h-[50px];
+    }
+  }
+
+  &-search {
+    @apply flex justify-center items-center  w-[50%] relative;
+    svg {
+      width: 18px;
+      height: 18px;
+      @apply absolute left-[0px] ml-2 text-black;
+    }
+    input {
+      @apply border-none outline-none text-right w-full;
+      @apply bg-slate-200 rounded p-2 placeholder:text-slate-500 placeholder-shown:text-slate-500;
+    }
+  }
+  &-account-profile {
+    @apply relative;
+    img {
+      @apply w-[50px] h-[50px] cursor-pointer rounded-full;
+    }
+    &-list {
+      @apply dark:text-white z-[313] hidden absolute   w-[200px] text-right rounded shadow-slate-800 shadow;
+      & > li {
+        @apply flex p-2 text-right rounded;
+        &:hover {
+          @apply text-blue-400 bg-blue-100;
+        }
+        & a {
+          @apply flex justify-end text-right w-full;
+          svg {
+            @apply ml-2;
+          }
+        }
+      }
+      &.active {
+        @apply block absolute  bg-white dark:bg-darkBlack left-[-10px] p-5  w-[200px] text-right;
+      }
+    }
+  }
+  &-left {
+    @apply w-[10%];
+  }
+}
