@@ -223,8 +223,6 @@
         </div>
       </div>
       <div class="shadow"></div>
-      <div class="shadow"></div>
-      <div class="shadow"></div>
     </header>
   </body>
 </html>
@@ -236,10 +234,10 @@
     "#main-nav-profile"
   );
 
-  const ActiveAllShadow=()=>{
+  const ActiveShadow=()=>{
     ElShadow.classList.add("active")
   }
-  const DeActiveAllShadow=()=>{
+  const DeActiveShadow=()=>{
    ElShadow.classList.remove("active")
   }
 
@@ -247,27 +245,26 @@
 
   document.querySelector("#sidebar-close").addEventListener("click", () => {
     document.querySelector("#sidebar").classList.toggle("active");
-    DeActiveAllShadow();
+    DeActiveShadow();
   });
 
   EltoggleBar.addEventListener("click", () => {
     document.querySelector("#sidebar").classList.toggle("active");
-    ActiveAllShadow();
+    ActiveShadow();
   });
 
   document.addEventListener("click", (e) => {
     if (e.target.closest("#main-nav-profile")) {
       ElMainNavAccountProfile.querySelector("ul").classList.toggle("active");
-    ActiveAllShadow();
+    ActiveShadow();
 
     } else {
       ElMainNavAccountProfile.querySelector("ul").classList.remove("active");
     }
+    
     if (e.target.closest(".shadow")) {
       document.querySelector("#sidebar").classList.remove("active");
-      document.querySelector("#sidebar-search-box-input").classList.toggle("active");
-
-    DeActiveAllShadow();
+      DeActiveShadow();
     }
   });
 
