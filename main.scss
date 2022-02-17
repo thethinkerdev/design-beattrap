@@ -9,7 +9,7 @@ body {
   font-family: "Markazi Text", serif;
 }
 #sidebar {
-  @apply bg-white dark:bg-darkBlack;
+  @apply bg-white;
   width: 17.25rem;
   height: 100%;
   position: fixed;
@@ -101,19 +101,16 @@ body {
 }
 
 #main-nav {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
+  @apply container-full;
   &-box {
     width: 80%;
     max-width: 1200px;
     height: 100px;
-    background-color: white;
     border-radius: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
+    @apply bg-white;
   }
   &-logo {
     width: 25%;
@@ -131,7 +128,7 @@ body {
     @apply relative;
     input{
       direction: rtl;
-      @apply w-full p-3 text-right border-none rounded outline-none bg-slate-100;
+      @apply w-full p-3 text-right border-none rounded-xl outline-none bg-slate-100;
       height: 40px;
     }
     svg {
@@ -165,4 +162,25 @@ body {
       }
     }
   }
+}
+
+.container-full{
+  @apply flex justify-center items-center p-[20px];  
+}
+
+.card{
+  width: 300px;
+  height: 350px;
+  @apply bg-slate-50 rounded-xl;
+  &-head{
+    @apply flex justify-center relative;
+    div{
+      @apply absolute top-[-30px] rounded-lg;
+      img{
+        @apply w-[270px] h-[132px] rounded-lg ;
+      }
+    }
+  }
+  &-body{}
+  &-footer{}
 }
