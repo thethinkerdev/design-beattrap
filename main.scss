@@ -207,7 +207,7 @@ body {
       }
     }
     .like {
-      @apply flex justify-center items-center;
+      @apply flex justify-center items-center cursor-pointer;
       .unliked {
         @apply hover:text-rose-500;
       }
