@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
 html,
 body {
   @apply bg-gray-300;
@@ -8,6 +9,7 @@ body {
 * {
   font-family: "Markazi Text", serif;
 }
+
 #sidebar {
   @apply bg-white;
   width: 17.25rem;
@@ -107,17 +109,14 @@ body {
     max-width: 1200px;
     height: 100px;
     border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    @apply bg-white;
+    @apply bg-white flex justify-end sm:justify-center items-center;
   }
   &-logo {
     width: 25%;
     img {
       width: 50px;
-    min-width: 50px;
-    height: 50px;
+      min-width: 50px;
+      height: 50px;
       @apply rounded-full;
       @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
     }
@@ -126,7 +125,7 @@ body {
     width: 50%;
     height: 40px;
     @apply relative;
-    input{
+    input {
       direction: rtl;
       @apply w-full p-3 text-right border-none rounded-xl outline-none bg-slate-100;
       height: 40px;
@@ -137,50 +136,84 @@ body {
       @apply text-darkBlack absolute left-2 top-[10px];
     }
   }
-  &-profile{
+  &-profile {
+    @apply hidden sm:flex;
     width: 25%;
-    display: flex;
     justify-content: center;
-    &-img{
+    &-img {
       width: 50px;
       height: 50px;
       @apply rounded-full cursor-pointer outline outline-2 outline-rose-500;
     }
-    &-list{
+    &-list {
       direction: rtl;
       @apply hidden absolute z-[313] w-full bg-white p-4 w-[200px] mt-[50px];
-     li a{
+      li a {
         display: flex;
         direction: rtl;
         @apply w-full p-2 hover:bg-blue-100 hover:text-blue-400;
-        svg{
-          margin-left: 5px
+        svg {
+          margin-left: 5px;
         }
       }
-      &.active{
+      &.active {
         @apply flex flex-col;
       }
     }
   }
 }
 
-.container-full{
-  @apply flex justify-center items-center p-[20px];  
+.container-full {
+  @apply flex justify-center items-center p-[20px];
 }
 
-.card{
-  width: 300px;
+.card {
+  width: 250px;
+  @apply max-w-[300px] relative;
   height: 350px;
-  @apply bg-slate-50 rounded-xl;
-  &-head{
-    @apply flex justify-center relative;
-    div{
+  @apply bg-slate-50 rounded-xl p-3;
+  &-head {
+    @apply flex justify-center relative h-[110px];
+    div {
       @apply absolute top-[-30px] rounded-lg;
-      img{
-        @apply w-[270px] h-[132px] rounded-lg ;
+      img {
+        @apply w-[230px] h-[132px] rounded-lg;
       }
     }
   }
-  &-body{}
-  &-footer{}
+  &-body {
+    @apply text-right;
+    h2 {
+      @apply font-bold;
+      @apply hover:text-blue-400 w-full;
+    }
+    p {
+      @apply text-gray-500;
+      font-size: 0.9rem;
+      font-weight: normal;
+      direction: rtl;
+    }
+  }
+  &-footer {
+    @apply absolute bottom-2 p-3 left-0 w-full flex justify-between items-center pt-1 border-separate border-t-2 text-right;
+    direction: rtl;
+    .price {
+      &-value {
+        font-size: 1.3rem;
+        font-weight: bold;
+      }
+      &-currency {
+        font-size: 0.8rem;
+      }
+    }
+    .like {
+      @apply flex justify-center items-center;
+      .unliked {
+        @apply hover:text-rose-500;
+      }
+      .liked {
+        @apply text-rose-500;
+      }
+    }
+  }
 }

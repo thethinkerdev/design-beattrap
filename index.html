@@ -11,7 +11,6 @@
       href="https://fonts.googleapis.com/css2?family=Markazi+Text:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="./dist/output.css" />
   </head>
   <body>
@@ -188,63 +187,32 @@
       <div class="card">
         <div class="card-head">
           <div class="overflow-hidden">
-          <img src="./dist/or 1.jpg" class="transition-all hover:scale-110" alt="">
+            <a href="">
+              <img src="./dist/or 1.jpg" class="transition-all hover:scale-110" alt="">
+            </a>
           </div>
         </div>
-        <div class="card-body"></div>
-        <div class="card-footer"></div>
+        <div class="card-body">
+          <h2><a href=".">آموزش لاراول ۹</a></h2>
+          <p>لاراول ۹ با تغییرات جدیدی ارائه شده که ما در دوره آشنایی با امکانات لاراول ۹ سعی داریم شما را با این امکانات جدید به شکل کامل آشنا کنیم.</p>
+        </div>
+        <div class="card-footer">
+          <span class="like">
+            <svg class="unliked ml-1 -mt-0.5" fill="none" width="14px" height="14px" viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg">
+              <path stroke="currentColor" d="M3.95035 1.229C4.81955 1.229 5.61243 1.66166 6.21284 2.15457C6.81326 1.66166 7.60614 1.229 8.47534 1.229C10.3497 1.229 11.8691 2.62275 11.8691 4.34192C11.8691 7.80824 7.92382 9.82702 6.62321 10.3984C6.36123 10.5134 6.06445 10.5134 5.80248 10.3984C4.50187 9.827 0.556602 7.80816 0.556602 4.34184C0.556602 2.62267 2.07603 1.229 3.95035 1.229Z" stroke-width="0.761705"></path>
+          </svg>
+              <!-- <svg class="liked ml-1 -mt-0.5" fill="currentColor" width="14px" height="14px" viewBox="0 0 13 11" xmlns="http://www.w3.org/2000/svg"> -->
+                  <!-- <path stroke="currentColor" d="M3.95035 1.229C4.81955 1.229 5.61243 1.66166 6.21284 2.15457C6.81326 1.66166 7.60614 1.229 8.47534 1.229C10.3497 1.229 11.8691 2.62275 11.8691 4.34192C11.8691 7.80824 7.92382 9.82702 6.62321 10.3984C6.36123 10.5134 6.06445 10.5134 5.80248 10.3984C4.50187 9.827 0.556602 7.80816 0.556602 4.34184C0.556602 2.62267 2.07603 1.229 3.95035 1.229Z" stroke-width="0.761705"></path> -->
+              <!-- </svg> -->
+          ۱۲۳
+          </span>
+          <span class="price"> 
+            <span class="price-value">۱۲۳,۰۰۰</span>
+            <span class="price-currency">تومان</span>
+          </span>
+        </div>
       </div>
     </section>
   </body>
+  <script src="main.js" ></script>
 </html>
-
-<script>
-  let ElShadow = document.querySelector(".shadow");
-  let EltoggleBar = document.querySelector("#toggle-bar");
-  let ElMainNavAccountProfile = document.querySelector(
-    "#main-nav-profile"
-  );
-
-  const ActiveShadow=()=>{
-    ElShadow.classList.add("active")
-  }
-  const DeActiveShadow=()=>{
-   ElShadow.classList.remove("active")
-  }
-
-
-  document.querySelector("#sidebar-close").addEventListener("click", () => {
-    document.querySelector("#sidebar").classList.toggle("active");
-    DeActiveShadow();
-  });
-
-  EltoggleBar.addEventListener("click", () => {
-    document.querySelector("#sidebar").classList.toggle("active");
-    ActiveShadow();
-  });
-
-  document.addEventListener("click", (e) => {
-    if (e.target.closest("#main-nav-profile")) {
-      ElMainNavAccountProfile.querySelector("ul").classList.toggle("active");
-    ActiveShadow();
-
-    } else {
-      ElMainNavAccountProfile.querySelector("ul").classList.remove("active");
-    }
-    
-    if (e.target.closest(".shadow")) {
-      document.querySelector("#sidebar").classList.remove("active");
-      DeActiveShadow();
-    }
-  });
-
-
-  const toggleDayLight = () => {
-    if (localStorage.getItem("dark-mode") == "true") {
-      localStorage.setItem("dark-mode", false);
-      document.querySelector("html").classList.remove("dark");
-    } else localStorage.setItem("dark-mode", true);
-  };
-
-
-</script>
