@@ -94,6 +94,10 @@ body {
   @apply block;
 }
 
+#main-nav-items ul li:hover > ul {
+  @apply block;
+}
+
 .shadow {
   @apply z-[312];
 }
@@ -103,13 +107,28 @@ body {
 }
 
 #main-nav {
-  @apply container-center;
+  @apply container-center flex-col;
   &-box {
     width: 100%;
     max-width: 1200px;
     height: 100px;
-    border-radius: 20px;
-    @apply bg-white flex justify-end sm:justify-center items-center;
+    @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
+  }
+  &-items {
+    @apply hidden   md:flex justify-center text-right items-center relative;
+    ul {
+      @apply flex bg-slate-50 absolute  justify-center rounded z-[313] p-1;
+      li {
+        padding: 10px 50px 10px 50px;
+        height: 40px;
+        @apply cursor-pointer;
+        @apply transition-all hover:bg-blue-100 hover:text-blue-400;
+      }
+    }
+    ul li ul {
+      @apply hidden;
+      transition: 0.6s all ease-in-out;
+    }
   }
   &-logo {
     width: 25%;
@@ -117,7 +136,6 @@ body {
       width: 50px;
       min-width: 50px;
       height: 50px;
-      @apply rounded-full;
       @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
     }
   }
