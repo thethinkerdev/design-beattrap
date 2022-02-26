@@ -6,6 +6,11 @@ html,
 body {
   @apply bg-gray-300;
 }
+body{
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
 * {
   font-family: "Markazi Text", serif;
 }
@@ -242,6 +247,7 @@ body {
 footer {
   background-color: #24262b;
   padding: 70px 0;
+  margin-top: auto;
 }
 .container {
   max-width: 1170px;
