@@ -115,18 +115,20 @@ body {
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
   }
   &-items {
-    @apply hidden   md:flex justify-center text-right items-center relative;
+    @apply hidden lg:flex justify-center text-right items-center relative;
+
     ul {
-      @apply flex bg-slate-50 absolute  justify-center rounded z-[313] p-1;
+      max-width: 1100px;
+      @apply flex bg-slate-50 absolute  justify-center rounded p-1;
       li {
-        padding: 10px 50px 10px 50px;
+        padding: 10px 37px 10px 37px;
         height: 40px;
         @apply cursor-pointer;
         @apply transition-all hover:bg-blue-100 hover:text-blue-400;
       }
     }
     ul li ul {
-      @apply hidden;
+      @apply hidden p-3 shadow border;
       transition: 0.6s all ease-in-out;
     }
   }
