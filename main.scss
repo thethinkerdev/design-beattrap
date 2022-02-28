@@ -6,7 +6,7 @@ html,
 body {
   @apply bg-gray-300;
 }
-body{
+body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
@@ -108,7 +108,7 @@ body{
 }
 
 .shadow.active {
-  @apply z-[312] absolute top-0 left-0 w-full h-full opacity-30 bg-slate-300;
+  @apply z-[312] fixed left-0 bottom-0 w-full h-full opacity-30 bg-slate-300;
 }
 
 #main-nav {
@@ -120,36 +120,43 @@ body{
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
   }
   &-items {
-    @apply hidden lg:flex justify-center text-right items-center relative;
+    @apply hidden md:flex justify-center text-right items-center relative;
 
     ul {
-      max-width: 1100px;
-      @apply flex bg-slate-50 absolute  justify-center rounded p-1;
+      max-width: 1200px;
+      margin-top: 15px;
+      @apply shadow flex bg-slate-50 absolute  justify-center rounded-[15px] p-1;
       li {
-        padding: 10px 37px 10px 37px;
+        padding: 10px 20px 10px 20px;
         height: 40px;
-        @apply cursor-pointer;
-        @apply transition-all hover:bg-blue-100 hover:text-blue-400;
+        @apply transition-all rounded text-slate-900 hover:bg-blue-100 hover:text-blue-400 rounded-[10px] cursor-pointer;
       }
     }
-    ul li ul {
-      @apply hidden p-3 shadow border;
-      transition: 0.6s all ease-in-out;
+    ul {
+      @apply z-[313];
+      li {
+        @apply relative;
+        ul {
+          @apply shadow hidden absolute left-[-90px] top-[25px] p-3 border-b-slate-400 border-b-[2.5px] w-[170px];
+          transition: 0.5s all ease-in-out;
+        }
+      }
     }
   }
   &-logo {
-    width: 25%;
+    @apply w-[30%];
     img {
-      width: 50px;
-      min-width: 50px;
-      height: 50px;
+      width: 60px;
+      min-width: 60px;
+      height: 60px;
       @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
     }
   }
   &-search {
-    width: 50%;
-    height: 40px;
-    @apply relative;
+    @apply relative sm:w-[40%] md:w-[100%] h-[40px] hidden sm:block;
+    form{
+      @apply sm:flex;
+    }
     input {
       direction: rtl;
       @apply w-full p-3 text-right border-none rounded-xl outline-none bg-slate-100;
@@ -166,17 +173,18 @@ body{
     width: 25%;
     justify-content: center;
     &-img {
-      width: 50px;
-      height: 50px;
+      width: 60px;
+      min-width: 60px;
+      height: 60px;
       @apply rounded-full cursor-pointer outline outline-2 outline-rose-500;
     }
     &-list {
       direction: rtl;
-      @apply hidden absolute z-[313] w-full bg-white p-4 w-[200px] mt-[50px];
+      @apply hidden absolute rounded z-[313] w-full bg-white p-4 w-[200px] mt-[50px];
       li a {
         display: flex;
         direction: rtl;
-        @apply w-full p-2 hover:bg-blue-100 hover:text-blue-400;
+        @apply w-full p-2 rounded hover:bg-blue-100 hover:text-blue-400;
         svg {
           margin-left: 5px;
         }
@@ -199,7 +207,7 @@ body{
   grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
   .card {
     width: 250px;
-    @apply max-w-[300px] relative;
+    @apply max-w-[300px] relative shadow;
     height: 350px;
     @apply bg-slate-50 rounded-xl p-3;
     &-head {
@@ -325,15 +333,14 @@ ul {
 }
 
 @media (max-width: 767px) {
-  .footer-col{
+  .footer-col {
     width: 50%;
     margin-bottom: 30px;
   }
 }
 
-
 @media (max-width: 574px) {
-  .footer-col{
+  .footer-col {
     width: 100%;
   }
 }
