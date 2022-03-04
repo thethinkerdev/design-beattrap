@@ -120,7 +120,7 @@ body {
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
   }
   &-items {
-    @apply hidden md:flex justify-center text-right items-center relative;
+    @apply hidden relative md:flex justify-center text-right items-center relative;
 
     ul {
       max-width: 1200px;
@@ -130,10 +130,11 @@ body {
         padding: 10px 20px 10px 20px;
         height: 40px;
         @apply transition-all rounded text-slate-900 hover:bg-blue-100 hover:text-blue-400 rounded-[10px] cursor-pointer;
+        
       }
     }
     ul {
-      @apply z-[313];
+      @apply z-[311];
       li {
         @apply relative;
         ul {
@@ -169,7 +170,7 @@ body {
     }
   }
   &-profile {
-    @apply hidden sm:flex;
+    @apply hidden sm:flex z-[313];
     width: 25%;
     justify-content: center;
     &-img {
@@ -180,7 +181,7 @@ body {
     }
     &-list {
       direction: rtl;
-      @apply hidden absolute rounded z-[313] w-full bg-white p-4 w-[200px] mt-[50px];
+      @apply hidden absolute rounded w-full bg-white p-4 w-[200px] mt-[50px];
       li a {
         display: flex;
         direction: rtl;
@@ -202,7 +203,7 @@ body {
 .card-list {
   direction: rtl;
   @apply mt-[50px];
-  @apply grid w-full justify-center items-center gap-10;
+  @apply grid w-full justify-center items-center gap-10 z-0;
   max-width: 1200px;
   grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
   .card {
@@ -220,10 +221,10 @@ body {
       }
     }
     &-body {
-      @apply text-right;
+      @apply text-right w-full;
       h2 {
         @apply font-bold;
-        @apply hover:text-blue-400 w-full;
+        @apply hover:text-blue-400 inline-flex;
       }
       p {
         @apply text-gray-500;
