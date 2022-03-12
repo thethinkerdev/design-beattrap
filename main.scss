@@ -302,6 +302,16 @@ body {
     }
   }
   ul:nth-child(2) {
+    @apply flex justify-center items-center bg-white pb-2;
+    li {
+      @apply m-2;
+      svg{
+        width: 25px;
+        height: 25px;
+      }
+    }
+  }
+  ul:nth-child(3) {
     @apply bg-slate-700 text-white p-4 text-center rounded-b;
   }
   &-logo {
