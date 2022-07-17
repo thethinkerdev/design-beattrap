@@ -196,8 +196,34 @@ body {
   }
 }
 
+.landing-page {
+}
 .container-center {
   @apply flex justify-center items-center px-20 py-5;
+}
+
+.container-landing-page {
+  @apply flex-col justify-center items-center;
+
+  div {
+    img {
+      margin-top: -110px;
+    }
+  }
+  div {
+    @apply flex justify-center mt-[80px];
+    h1 {
+      @apply text-5xl text-right;
+      direction: rtl;
+    }
+  }
+}
+.container-right {
+  @apply flex justify-end items-center;
+}
+.landing-page-image {
+  @apply w-[150px];
+  transform: scale(2);
 }
 .card-list {
   direction: rtl;
@@ -305,7 +331,7 @@ body {
     @apply flex justify-center items-center bg-white pb-2;
     li {
       @apply m-2;
-      svg{
+      svg {
         width: 25px;
         height: 25px;
       }
@@ -323,4 +349,23 @@ body {
   a {
     @apply text-blue-400 hover:text-blue-500;
   }
+}
+
+bg-white {
+  @apply bg-white;
+  border-radius: 40px;
+  padding: 10px;
+  margin-left: 5px;
+}
+magenta {
+  @apply text-indigo-600;
+}
+red {
+  @apply text-red-500;
+}
+green {
+  @apply text-green-500;
+}
+orange {
+  @apply text-red-500 font-bold;
 }
