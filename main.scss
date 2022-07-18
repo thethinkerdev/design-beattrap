@@ -7,12 +7,20 @@ body {
   @apply bg-gray-300;
 }
 body {
+  width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
 * {
   font-family: "Markazi Text", serif;
+}
+
+.container-full-center {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #sidebar {
@@ -112,10 +120,10 @@ body {
 }
 
 #main-nav {
-  @apply container-center flex-col;
+  @apply mt-3;
+  max-width: 1200px;
+  @apply flex-col w-[350px] sm:w-[500px]   md:w-[600px] ml:w-[900px] xl:w-[1200px];
   &-box {
-    width: 100%;
-    max-width: 1200px;
     height: 100px;
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
   }
@@ -123,8 +131,6 @@ body {
     @apply hidden relative md:flex justify-center text-right items-center relative;
 
     ul {
-      max-width: 1200px;
-      margin-top: 15px;
       @apply shadow flex bg-slate-50 absolute  justify-center rounded-[15px] p-1;
       li {
         padding: 10px 20px 10px 20px;
@@ -196,9 +202,7 @@ body {
   }
 }
 
-.landing-page {
-}
-.container-center {
+.container {
   @apply flex justify-center items-center px-20 py-5;
 }
 
@@ -351,6 +355,10 @@ body {
   }
 }
 
+.h1 {
+  font-size: 48px;
+}
+
 bg-white {
   @apply bg-white;
   border-radius: 40px;
@@ -368,4 +376,10 @@ green {
 }
 orange {
   @apply text-red-500 font-bold;
+}
+
+.categories {
+  .category-item {
+    @apply bg-green-100 text-green-400 rounded p-1;
+  }
 }

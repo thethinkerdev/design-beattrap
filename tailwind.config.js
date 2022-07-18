@@ -4,10 +4,14 @@ module.exports = {
   ],
   theme: {
     extend: {
-      colors:{
-      "darkBlack":"#12111f"
-      }
-    },
+      colors: {
+        "darkBlack": "#12111f"
+      },
+
+      screens: {
+        'ml': { 'max': '1000px' },
+      },
+    }
   },
   plugins: [],
 }
