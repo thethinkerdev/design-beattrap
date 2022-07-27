@@ -1,3 +1,8 @@
+@font-face {
+  font-family: Yekan;
+  src: url("../fonts/Yekan.ttf");
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -6,14 +11,17 @@ html,
 body {
   @apply bg-gray-300;
 }
+
+
 body {
   width: 100%;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 * {
-  font-family: "Markazi Text", serif;
+  font-family: Yekan;
 }
 
 .container-full-center {
@@ -36,9 +44,11 @@ body {
   overflow: auto;
   z-index: 313;
 }
+
 #logo-box {
   @apply flex justify-center;
 }
+
 #sidebar img {
   width: 50px;
   height: 50px;
@@ -49,12 +59,14 @@ body {
   width: 25px;
   height: 25px;
 }
+
 #sidebar ul li {
   @apply w-[90%] ml-2 p-2  rounded text-right border-r-2 border-transparent cursor-pointer;
   svg {
     @apply ml-2;
   }
 }
+
 #sidebar ul li:hover {
   @apply bg-blue-100 border-r-2 border-solid;
 }
@@ -73,6 +85,7 @@ body {
   font-size: 45px;
   font-weight: bold;
 }
+
 #sidebar.active {
   right: 0;
 }
@@ -92,6 +105,7 @@ body {
   border: none;
   @apply w-full p-2 rounded text-slate-700 bg-slate-300 placeholder:text-slate-500;
 }
+
 #sidebar-search-box svg {
   position: absolute;
   width: 18px;
@@ -99,10 +113,12 @@ body {
   margin-left: 10px;
   @apply text-gray-500;
 }
+
 #sidebar ul li ul {
   display: none;
   transition: 0.6s all ease-in-out;
 }
+
 #sidebar ul li:hover > ul {
   @apply block;
 }
@@ -120,13 +136,13 @@ body {
 }
 
 #main-nav {
-  @apply mt-3;
-  max-width: 1200px;
-  @apply flex-col w-[350px] sm:w-[500px]   md:w-[600px] ml:w-[900px] xl:w-[1200px];
+  @apply mt-3 min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+
   &-box {
     height: 100px;
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
   }
+
   &-items {
     @apply hidden relative md:flex justify-center text-right items-center relative;
 
@@ -134,10 +150,12 @@ body {
       @apply shadow flex bg-slate-50 absolute  justify-center rounded-[15px] p-1;
       li {
         padding: 10px 20px 10px 20px;
+        z-index: 999 !important;
         height: 40px;
         @apply transition-all rounded text-slate-900 hover:bg-blue-100 hover:text-blue-400 rounded-[10px] cursor-pointer;
       }
     }
+
     ul {
       @apply z-[311];
       li {
@@ -149,6 +167,7 @@ body {
       }
     }
   }
+
   &-logo {
     @apply w-[30%];
     img {
@@ -158,32 +177,38 @@ body {
       @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
     }
   }
+
   &-search {
     @apply relative sm:w-[40%] md:w-[100%] h-[40px] hidden sm:block;
     form {
       @apply sm:flex;
     }
+
     input {
       direction: rtl;
       @apply w-full p-3 text-right border-none rounded-xl outline-none bg-slate-100;
       height: 40px;
     }
+
     svg {
       width: 20px;
       font-size: 15px;
       @apply text-darkBlack absolute left-2 top-[10px];
     }
   }
+
   &-profile {
     @apply hidden sm:flex z-[313];
     width: 25%;
     justify-content: center;
+
     &-img {
       width: 60px;
       min-width: 60px;
       height: 60px;
       @apply rounded-full cursor-pointer outline outline-2 outline-rose-500;
     }
+
     &-list {
       direction: rtl;
       @apply hidden absolute rounded w-full bg-white p-4 w-[200px] mt-[50px];
@@ -195,6 +220,7 @@ body {
           margin-left: 5px;
         }
       }
+
       &.active {
         @apply flex flex-col;
       }
@@ -207,13 +233,19 @@ body {
 }
 
 .container-landing-page {
-  @apply flex-col justify-center items-center;
+  @apply p-[10px] flex-col justify-center items-center;
 
   div {
     img {
       margin-top: -110px;
     }
+
+    h1 {
+      font-weight: bold;
+      font-size: 2.9rem !important;
+    }
   }
+
   div {
     @apply flex justify-center mt-[80px];
     h1 {
@@ -222,19 +254,23 @@ body {
     }
   }
 }
+
 .container-right {
   @apply flex justify-end items-center;
 }
+
 .landing-page-image {
   @apply w-[150px];
   transform: scale(2);
 }
+
 .card-list {
   direction: rtl;
-  @apply mt-[50px];
-  @apply grid w-full justify-center items-center gap-10 z-0;
-  max-width: 1200px;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 300px));
+  @apply mt-[100px];
+  @apply grid justify-center items-center gap-10 z-0;
+  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
+
   .card {
     width: 250px;
     @apply max-w-[300px] relative shadow;
@@ -249,12 +285,14 @@ body {
         }
       }
     }
+
     &-body {
       @apply text-right w-full;
       h2 {
         @apply font-bold;
         @apply hover:text-blue-400 inline-flex;
       }
+
       p {
         @apply text-gray-500;
         font-size: 0.9rem;
@@ -262,18 +300,22 @@ body {
         direction: rtl;
       }
     }
+
     &-footer {
       @apply absolute bottom-2 p-3 left-0 w-full flex justify-between items-center pt-1 border-separate border-t-2 text-right;
       direction: rtl;
+
       .price {
         &-value {
           font-size: 1.3rem;
           font-weight: bold;
         }
+
         &-currency {
           font-size: 0.8rem;
         }
       }
+
       .like {
         @apply bg-rose-300 text-rose-700 rounded px-1 flex justify-center items-center cursor-pointer transition-all;
         @apply hover:bg-rose-600 hover:text-white;
@@ -284,6 +326,7 @@ body {
 
 .footer {
   direction: rtl;
+
   &-intro-social-networks {
     @apply flex flex-col sm:flex-col md:flex-row justify-between px-[120px] items-center bg-indigo-600 p-3 text-white;
     ul {
@@ -291,18 +334,21 @@ body {
       li {
         @apply m-1;
       }
+
       svg {
         width: 14px;
         height: 14px;
       }
     }
   }
+
   &-list {
     display: grid;
 
-    @media screen(md) {
-      grid-template-columns: 30% repeat(3, max-content);
-    }
+    @media
+  screen(md) {
+    grid-template-columns: 30% repeat(3, max-content);
+  }
 
     @apply justify-around items-center text-white bg-slate-800 p-3;
     h3 {
@@ -310,20 +356,24 @@ body {
       @apply inline-flex font-bold;
       @apply border-b-[1px] border-solid border-indigo-300;
     }
+
     p {
       overflow-wrap: break-word;
     }
+
     li {
       @apply text-center;
     }
   }
+
   &-copyRight {
     @apply bg-slate-900 p-3 flex justify-center text-white shadow;
   }
 }
+
 .footer {
-  max-width: 1200px;
-  @apply border-t-2 w-full border-t-blue-200;
+  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply border-t-2  border-t-blue-200 mb-[10px] mt-3;
   ul:nth-child(1) {
     @apply bg-white rounded-t p-4;
     @apply flex flex-col md:flex-row justify-center items-center;
@@ -331,6 +381,7 @@ body {
       @apply m-2;
     }
   }
+
   ul:nth-child(2) {
     @apply flex justify-center items-center bg-white pb-2;
     li {
@@ -341,15 +392,18 @@ body {
       }
     }
   }
+
   ul:nth-child(3) {
     @apply bg-slate-700 text-white p-4 text-center rounded-b;
   }
+
   &-logo {
     width: 60px;
     min-width: 60px;
     height: 60px;
     @apply rounded-full mx-[50px];
   }
+
   a {
     @apply text-blue-400 hover:text-blue-500;
   }
@@ -365,15 +419,19 @@ bg-white {
   padding: 10px;
   margin-left: 5px;
 }
+
 magenta {
   @apply text-indigo-600;
 }
+
 red {
   @apply text-red-500;
 }
+
 green {
   @apply text-green-500;
 }
+
 orange {
   @apply text-red-500 font-bold;
 }
@@ -382,4 +440,64 @@ orange {
   .category-item {
     @apply bg-green-100 text-green-400 rounded p-1;
   }
+}
+
+
+.product {
+  @apply grid mt-[60px] ;
+  row-gap: 5px;
+
+  justify-content: space-between;
+  align-items: center;
+  text-align: right;
+  @apply px-[10px] min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+
+
+  grid-template-areas:
+  "category category category"
+  "title title title"
+  "content content content"
+  "audio audio audio";
+
+  grid-template-columns: 20% 40% 40% !important;
+
+  @media screen and (min-width: 1000px) {
+    grid-template-areas:
+  "audio audio category"
+  "audio audio title"
+  "audio audio content"
+  "audio audio content";
+  }
+
+  &-title {
+    @apply mt-2;
+    grid-area: title;
+    font-size: 1.3rem;
+    font-weight: bold;
+    direction: rtl;
+    font-family: Yekan;
+  }
+
+  &-content {
+    grid-area: content;
+  }
+
+  &-categories {
+
+    direction: rtl;
+
+    grid-area: category;
+
+    &-item {
+      width: 100px;
+      height: 90px;
+      padding: 3px 15px 3px 15px;
+      @apply bg-green-200 rounded text-green-500;
+    }
+  }
+
+  &-audio {
+    grid-area: audio;
+  }
+
 }
