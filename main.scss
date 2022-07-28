@@ -455,18 +455,17 @@ orange {
 
   grid-template-areas:
   "category category category"
+  "image image image"
   "title title title"
-  "content content content"
-  "audio audio audio";
+"content content content";
 
-  grid-template-columns: 20% 40% 40% !important;
+  grid-template-columns: 40% 20% 20% !important;
 
   @media screen and (min-width: 1000px) {
     grid-template-areas:
-  "audio audio category"
-  "audio audio title"
-  "audio audio content"
-  "audio audio content";
+  "image category category"
+  "image title title"
+  "image content content"
   }
 
   &-title {
@@ -496,8 +495,9 @@ orange {
     }
   }
 
-  &-audio {
-    grid-area: audio;
+  &-image {
+    @apply rounded;
+    grid-area: image;
   }
 
 }
