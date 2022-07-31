@@ -12,14 +12,13 @@
   "license": "ISC",
   "devDependencies": {
     "autoprefixer": "^10.4.2",
-    "postcss": "^8.4.6",
+    "postcss": "^8.4.14",
     "postcss-cli": "^9.1.0",
     "postcss-nested": "^5.0.6",
     "tailwindcss": "^3.0.22"
   },
   "dependencies": {
     "cssnano": "^5.0.17",
-    "postcss-scss": "^4.0.3",
     "sass": "^1.49.7"
   }
 }

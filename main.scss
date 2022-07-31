@@ -1,6 +1,27 @@
 @font-face {
-  font-family: Yekan;
-  src: url("../fonts/Yekan.ttf");
+  font-family: almarai-light;
+  src: url("../fonts/Almarai-Light.ttf");
+}
+
+@font-face {
+  font-family: almarai-regular;
+  src: url("../fonts/Almarai-Regular.ttf");
+}
+
+
+@font-face {
+  font-family: almarai-bold;
+  src: url("../fonts/Almarai-Bold.ttf");
+}
+
+@font-face {
+  font-family: almarai-ex-bold;
+  src: url("../fonts/Almarai-ExtraBold.ttf");
+}
+
+@font-face {
+  font-family: markazi-md;
+  src: url("../fonts/MarkaziText-Medium.ttf");
 }
 
 @tailwind base;
@@ -15,20 +36,22 @@ body {
 
 body {
   width: 100%;
-  display: flex;
+  display: grid;
   flex-direction: column;
+  justify-content: center;
+  align-items: start;
   min-height: 100vh;
 }
 
-* {
-  font-family: Yekan;
-}
-
 .container-full-center {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  display: grid;
+  grid-template-areas:
+  "header"
+  "content"
+  "footer";
+  //flex-flow: column;
+  //justify-content: center;
+  //align-items: center;
 }
 
 #sidebar {
@@ -136,6 +159,7 @@ body {
 }
 
 #main-nav {
+  grid-area: header;
   @apply mt-3 min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
 
   &-box {
@@ -325,6 +349,7 @@ body {
 }
 
 .footer {
+  grid-area: footer;
   direction: rtl;
 
   &-intro-social-networks {
@@ -444,41 +469,69 @@ orange {
 
 
 .product {
-  @apply grid mt-[60px] ;
-  row-gap: 5px;
-
-  justify-content: space-between;
+  grid-area: content;
+  @apply grid mt-[60px] rounded ;
+  justify-content: center;
   align-items: center;
   text-align: right;
-  @apply px-[10px] min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
 
 
   grid-template-areas:
-  "category category category"
   "image image image"
   "title title title"
-"content content content";
+"content content content"
+"money money money"
+"addToCard addToCard addToCard"
+"footer footer footer";
 
   grid-template-columns: 40% 20% 20% !important;
 
-  @media screen and (min-width: 1000px) {
+  @media screen and (min-width: 800px) {
+    justify-content: space-between;
     grid-template-areas:
-  "image category category"
   "image title title"
   "image content content"
+  "image money addToCard"
+    "footer footer footer";
+  }
+
+  &-addToCard {
+    grid-area: addToCard;
+    padding: 15px;
+    font-family: markazi-md;
+    font-weight: bold;
+    @apply bg-blue-500 rounded text-white;
   }
 
   &-title {
-    @apply mt-2;
+    @apply text-gray-700;
     grid-area: title;
-    font-size: 1.3rem;
-    font-weight: bold;
+    font-size: 1.8rem;
+    @apply mb-5;
     direction: rtl;
-    font-family: Yekan;
+    font-family: almarai-ex-bold;
+  }
+
+  &-footer {
+    width: 100%;
+    @apply mt-5 border-slate-100 border-t-2;
+    grid-area: footer;
+  }
+
+  &-money {
+    @apply text-gray-700;
+    grid-area: money;
+    font-family: almarai-ex-bold;
+    font-size: 25px;
+    text-align: left;
   }
 
   &-content {
+    font-family: markazi-md;
     grid-area: content;
+    @apply text-gray-500;
+    direction: rtl;
   }
 
   &-categories {
