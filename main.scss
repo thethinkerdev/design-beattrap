@@ -160,8 +160,8 @@ body {
 
 #main-nav {
   grid-area: header;
-  @apply mt-3 min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
-
+  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply p-3;
   &-box {
     height: 100px;
     @apply bg-white flex justify-end sm:justify-center items-center rounded-[20px];
@@ -351,7 +351,7 @@ body {
 .footer {
   grid-area: footer;
   direction: rtl;
-
+  @apply m-3;
   &-intro-social-networks {
     @apply flex flex-col sm:flex-col md:flex-row justify-between px-[120px] items-center bg-indigo-600 p-3 text-white;
     ul {
@@ -474,63 +474,123 @@ orange {
   justify-content: center;
   align-items: center;
   text-align: right;
-  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
 
 
   grid-template-areas:
   "image image image"
   "title title title"
-"content content content"
-"money money money"
-"addToCard addToCard addToCard"
-"footer footer footer";
-
-  grid-template-columns: 40% 20% 20% !important;
+  "content content content"
+  "money money money"
+  "addToCart addToCart addToCart"
+  "footer footer footer";
 
   @media screen and (min-width: 800px) {
     justify-content: space-between;
     grid-template-areas:
   "image title title"
   "image content content"
-  "image money addToCard"
+  "image money addToCart"
     "footer footer footer";
+    grid-template-columns: 30% 20% 20% !important;
   }
 
-  &-addToCard {
-    grid-area: addToCard;
-    padding: 15px;
-    font-family: markazi-md;
+  &-addToCart {
+    width: 100%;
+    height: 60px;
+    grid-area: addToCart;
+    font-size: 18px;
+    font-family: markazi-lg;
     font-weight: bold;
-    @apply bg-blue-500 rounded text-white;
+    @apply bg-blue-500 flex justify-center rounded items-center text-white mt-3;
+    position: relative;
+    transition: all .5s;
+
+    &::before {
+      content: "";
+      width: 200px;
+      height: 60px;
+      background-color: #818181;
+      position: absolute;
+      opacity: 0.1;
+      transform: scale(0);
+      border-radius: 100%;
+      @apply rounded;
+    }
+
+    &::after {
+      content: "";
+      width: 200px;
+      height: 60px;
+      background-color: #cac9c9;
+      position: absolute;
+      opacity: 0.2;
+      transform: scale(0);
+      transition: 0.5s all ease-out;
+      border-radius: 100%;
+      @apply rounded;
+
+    }
+
+
   }
 
   &-title {
-    @apply text-gray-700;
+    @apply text-gray-700 mb-5 mt-3;
     grid-area: title;
     font-size: 1.8rem;
-    @apply mb-5;
     direction: rtl;
     font-family: almarai-ex-bold;
   }
 
   &-footer {
-    width: 100%;
-    @apply mt-5 border-slate-100 border-t-2;
+    @apply mt-5 border-slate-100 border-t-2 w-full p-3;
     grid-area: footer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+            "right"
+            "social-media";
+
+    &-right {
+      grid-area: right;
+
+      &-like-box {
+        @apply flex justify-center items-center bg-red-500 rounded m-1 p-1 text-white font-bold;
+      }
+
+      &-comment-box {
+        @apply flex justify-center items-center bg-blue-500 rounded  m-1 p-1 text-white font-bold;
+      }
+
+    }
+
+    &-social-media {
+      @apply text-right;
+      grid-area: social-media;
+    }
+
+    @media screen and (min-width: 600px) {
+      grid-template-areas:"social-media right";
+      justify-content: space-between;
+    }
+
   }
 
   &-money {
-    @apply text-gray-700;
+    @apply text-gray-700 mt-3;
     grid-area: money;
     font-family: almarai-ex-bold;
     font-size: 25px;
-    text-align: left;
+    @apply text-center;
   }
 
   &-content {
     font-family: markazi-md;
     grid-area: content;
     @apply text-gray-500;
+    font-size: 1.1rem;
     direction: rtl;
   }
 
@@ -549,8 +609,12 @@ orange {
   }
 
   &-image {
-    @apply rounded;
+    @apply rounded w-full h-[200px];
     grid-area: image;
   }
 
+}
+
+.like, .comment, .twitter, .telegram, .cart {
+  @apply w-[24px] h-[24px];
 }
