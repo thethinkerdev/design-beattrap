@@ -160,7 +160,8 @@ body {
 
 #main-nav {
   grid-area: header;
-  @apply min-w-[450px] sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+
   @apply p-3;
   &-box {
     height: 100px;
@@ -474,7 +475,7 @@ orange {
   justify-content: center;
   align-items: center;
   text-align: right;
-  @apply sm:w-[450px] md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px];
 
 
   grid-template-areas:
@@ -609,12 +610,98 @@ orange {
   }
 
   &-image {
-    @apply rounded w-full h-[200px];
+    @apply rounded w-full h-[300px];
     grid-area: image;
   }
 
 }
 
+.product-inner {
+  @apply mt-3;
+  display: grid;
+  grid-template-areas:
+    "content content"
+    "sidebar sidebar";
+  @media screen and (min-width: 800px) {
+    grid-template-areas:
+    "sidebar content"
+    "sidebar content";
+  }
+  width: 100%;
+  overflow-wrap: normal;
+  @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px];
+  gap: 10px;
+  grid-template-columns: minmax(15%, 25%) minmax(75%, 65%);
+
+  &-content {
+    grid-area: content;
+    direction: rtl;
+    @apply bg-white rounded p-[20px] text-right;
+  }
+
+  &-sidebar {
+    grid-area: sidebar;
+
+    .sidebar-related-products {
+      @apply bg-white rounded p-3 text-right;
+
+      .product-inner-sidebar-items-item {
+        @apply mt-3;
+        display: grid;
+        grid-template-areas: "product_title image";
+        gap: 10px;
+
+        img {
+          @apply rounded;
+          grid-area: image;
+        }
+
+        a {
+          font-size: .8rem;
+          grid-area: product_title;
+        }
+
+      }
+    }
+
+    .sidebar-owner {
+      @apply bg-white rounded p-3 text-right;
+      justify-content: center;
+      align-items: center;
+      @apply mt-3;
+      display: grid;
+      grid-template-areas: "img" "owner_name" "info";
+      gap: 10px;
+
+      img {
+        @apply rounded-full;
+        grid-area: img;
+        width: 70px;
+        height: 70px;
+        margin: auto auto;
+      }
+
+      span {
+        text-align: center;
+        font-weight: bold;
+        grid-area: owner_name;
+      }
+
+      p {
+        grid-area: info;
+        font-weight: lighter;
+        font-size: .9rem;
+      }
+    }
+
+
+  }
+}
+
 .like, .comment, .twitter, .telegram, .cart {
   @apply w-[24px] h-[24px];
+}
+.full-right-to-left {
+  direction: rtl;
+  text-align: right;
 }
