@@ -30,7 +30,7 @@
 
 html,
 body {
-  @apply bg-gray-300;
+  background-color: #ebebec;
 }
 
 
@@ -631,7 +631,7 @@ orange {
   overflow-wrap: normal;
   @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px];
   gap: 10px;
-  grid-template-columns: minmax(15%, 25%) minmax(75%, 65%);
+  grid-template-columns: minmax(26%, 40%) minmax(73%, 65%);
 
   &-content {
     grid-area: content;
@@ -642,35 +642,13 @@ orange {
   &-sidebar {
     grid-area: sidebar;
 
-    .sidebar-related-products {
-      @apply bg-white rounded p-3 text-right;
-
-      .product-inner-sidebar-items-item {
-        @apply mt-3;
-        display: grid;
-        grid-template-areas: "product_title image";
-        gap: 10px;
-
-        img {
-          @apply rounded;
-          grid-area: image;
-        }
-
-        a {
-          font-size: .8rem;
-          grid-area: product_title;
-        }
-
-      }
-    }
-
     .sidebar-owner {
       @apply bg-white rounded p-3 text-right;
       justify-content: center;
       align-items: center;
       @apply mt-3;
       display: grid;
-      grid-template-areas: "img" "owner_name" "info";
+      grid-template-areas: "img" "owner_name" "owner_info"  "info";
       gap: 10px;
 
       img {
@@ -681,19 +659,84 @@ orange {
         margin: auto auto;
       }
 
-      span {
+      &-info {
+        text-align: center;
+        font-size: .8rem;
+        grid-area: owner_info;
+        @apply text-slate-500;
+      }
+
+      &-name {
         text-align: center;
         font-weight: bold;
         grid-area: owner_name;
+        @apply text-gray-900;
+
       }
 
       p {
         grid-area: info;
         font-weight: lighter;
         font-size: .9rem;
+        text-align: justify;
+        @apply text-gray-600;
       }
     }
 
+    .sidebar-related-products {
+      border: 1px solid #ecf0f4;
+      @apply bg-white rounded p-3 text-right mt-3;
+      h5 {
+        @apply p-3;
+        border-bottom: 1px solid #ecf0f4;
+      }
+
+      li {
+        direction: rtl;
+        text-align: right;
+        @apply p-2 mr-5;
+        position: relative;
+        counter-increment: index;
+
+        &::before {
+          content: counters(index, ".");
+          position: absolute;
+          right: -25px;
+          top: 25%;
+          @apply text-slate-800;
+          width: 8px;
+          font-size: .9rem;
+          display: flex;
+          @apply text-white bg-red-500 px-3 rounded;
+          justify-content: center;
+          align-items: center;
+
+        }
+
+        border-bottom: .8px solid #f1f3f3;
+      }
+    }
+
+    .sidebar-product-details {
+      @apply grid;
+      grid-template-columns: repeat(2, 45%);
+      justify-content: space-between;
+      &-created {
+        @apply flex flex-col justify-center items-center bg-white rounded p-3;
+        span {
+          @apply text-slate-500;
+          font-size: .7rem;
+          font-family: almarai-light;
+        }
+
+        p {
+          @apply text-slate-900;
+          font-size: .9rem;
+          font-weight: bold;
+          font-family: almarai-ex-bold;
+        }
+      }
+    }
 
   }
 }
@@ -701,6 +744,7 @@ orange {
 .like, .comment, .twitter, .telegram, .cart {
   @apply w-[24px] h-[24px];
 }
+
 .full-right-to-left {
   direction: rtl;
   text-align: right;
