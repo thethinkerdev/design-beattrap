@@ -1,0 +1,39 @@
+
+@font-face {
+    font-family: almarai-light;
+    src: url("../fonts/Almarai-Light.ttf");
+  }
+  
+  @font-face {
+    font-family: almarai-regular;
+    src: url("../fonts/Almarai-Regular.ttf");
+  }
+  
+  
+  @font-face {
+    font-family: almarai-bold;
+    src: url("../fonts/Almarai-Bold.ttf");
+  }
+  
+  @font-face {
+    font-family: almarai-ex-bold;
+    src: url("../fonts/Almarai-ExtraBold.ttf");
+  }
+  
+  @font-face {
+    font-family: markazi-md;
+    src: url("../fonts/MarkaziText-Medium.ttf");
+  }
+  @font-face {
+    font-family: iransans;
+    src: url("../fonts/Iranian\ Sans.ttf");
+  }
+  
+  @font-face {
+    font-family: markazi-regular;
+    src: url("../fonts/Markazi/MarkaziText-Regular.ttf");
+  }
+  @font-face {
+    font-family: markazi-bold;
+    src: url("../fonts/Markazi/MarkaziText-Bold.ttf");
+  }
