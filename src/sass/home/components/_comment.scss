@@ -1,0 +1,81 @@
+.product__comments,
+.main-container__main__comments {
+  width: 100%;
+  text-align: right;
+  direction: rtl;
+  &__title {
+    @apply mt-3 p-3 text-right rounded bg-orange-400 inline-flex text-white;
+    & > * {
+      @apply mr-1;
+    }
+  }
+  &__create {
+    @apply mt-3;
+    &__rules {
+      @apply text-slate-900 p-3;
+    }
+
+    &__form {
+      &__box {
+        &__textarea {
+          @apply w-full rounded shadow p-3 outline-none border-none;
+        }
+      }
+      &__btn {
+        @apply bg-green-500 p-3 text-white shadow px-5 rounded-bl-md rounded-tr-md;
+      }
+    }
+  }
+
+  &__comment {
+    @apply grid bg-white w-full mt-3 rounded shadow p-3;
+    justify-content: space-between;
+    grid-template-areas: "name-logo created_at" "text text" "reply like" "reply-the-comment reply-the-comment";
+
+    &__name-logo {
+      grid-area: "name-logo";
+      @apply flex  items-center;
+      &__name {
+        @apply text-gray-700 font-bold;
+      }
+      &__logo {
+        @apply w-[70px] h-[70px] rounded-full;
+      }
+    }
+
+    &__created-at {
+      grid-area: created_at;
+      @apply text-left text-gray-700;
+    }
+    &__text {
+      grid-area: text;
+      @apply text-gray-600 p-3;
+    }
+
+    &__reply {
+      @apply inline-flex w-max cursor-pointer mt-3 select-none;
+      grid-area: reply;
+
+      & > * {
+        @apply m-[2px];
+      }
+    }
+    &__like {
+      grid-area: like;
+      @apply inline-flex justify-end text-gray-600;
+      div > * {
+        @apply m-[2px];
+      }
+    }
+    &__reply-this-comment {
+      grid-area: reply-the-comment;
+      @apply p-3 bg-slate-100 rounded mt-2;
+      textarea {
+        @apply w-full rounded shadow p-3 outline-none border-none;
+      }
+      button {
+        @apply bg-green-500 p-3 text-white shadow px-5 rounded-bl-md rounded-tr-md;
+      }
+    }
+  }
+}

@@ -1,0 +1,53 @@
+
+.form {
+  width: 120px;
+  @apply absolute;
+  top: 50%;
+  right: 50%;
+  width: 400px;
+  @apply flex flex-col justify-center items-center;
+  transform: translate(50%, -50%);
+  @apply bg-white py-6 shadow px-[30px] rounded;
+  & > * {
+    @apply mt-3;
+  }
+  &__message {
+    @apply w-full shadow rounded bg-slate-200 text-slate-500 p-3 mt-1 flex;
+    span {
+      @apply mr-2;
+    }
+  }
+
+  &__logo {
+    @apply w-full h-[200px];
+  }
+  &__box {
+    @apply flex flex-col w-full;
+    &__message {
+      @apply shadow rounded bg-rose-500 text-white p-3 mt-1 flex;
+      span {
+        @apply mr-2;
+      }
+    }
+    &__link{
+      @apply text-blue-500;
+    }
+    &__input {
+      @apply mt-1 outline-none border border-transparent rounded shadow w-full p-3;
+
+      &--correct {
+        @apply border-green-300;
+      }
+      &--wrong {
+        @apply border-rose-300;
+      }
+    }
+
+  }
+  &__btn {
+    @apply w-full bg-green-500 text-white p-3 rounded shadow;
+  }
+  &__rules {
+    @apply text-xs text-gray-700;
+  }
+}

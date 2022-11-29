@@ -1,0 +1,285 @@
+.product__content {
+  @apply mt-3;
+  display: grid;
+  grid-template-areas:
+    "content content"
+    "sidebar sidebar";
+
+  @media screen and (min-width: 800px) {
+    grid-template-areas:
+      "sidebar content"
+      "sidebar content";
+  }
+
+  width: 100%;
+  overflow-wrap: normal;
+  /* @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px]; */
+  gap: 10px;
+  grid-template-columns: minmax(26%, 40%) minmax(73%, 65%);
+
+  &__body {
+    grid-area: content;
+    direction: rtl;
+    @apply bg-white shadow rounded p-[20px] text-right;
+  }
+
+  &__sidebar {
+    grid-area: sidebar;
+
+    .sidebar-owner {
+      @apply bg-white shadow rounded p-3 text-right;
+      justify-content: center;
+      align-items: center;
+      @apply mt-3;
+      display: grid;
+      grid-template-areas: "img" "owner_name" "owner_info" "info";
+      gap: 10px;
+
+      img {
+        @apply rounded-full;
+        grid-area: img;
+        width: 70px;
+        height: 70px;
+        margin: auto auto;
+      }
+
+      &-info {
+        text-align: center;
+        font-size: 0.8rem;
+        grid-area: owner_info;
+        @apply text-slate-500;
+      }
+
+      &-name {
+        text-align: center;
+        font-weight: bold;
+        grid-area: owner_name;
+        @apply text-gray-900;
+      }
+
+      p {
+        grid-area: info;
+        font-size: 0.8rem;
+        text-align: justify;
+        @apply text-slate-500;
+      }
+    }
+
+    .sidebar-related-products {
+      border: 1px solid #ecf0f4;
+      @apply bg-white shadow rounded p-3 text-right mt-3;
+
+      h5 {
+        @apply p-3;
+        border-bottom: 1px solid #ecf0f4;
+      }
+
+      li {
+        direction: rtl;
+        text-align: right;
+        @apply p-2 mr-5;
+        position: relative;
+        counter-increment: index;
+
+        &::before {
+          content: counters(index, ".");
+          position: absolute;
+          right: -25px;
+          top: 25%;
+          @apply text-slate-800;
+          width: 8px;
+          font-size: 0.9rem;
+          display: flex;
+          @apply text-white bg-red-500 px-3 rounded;
+          justify-content: center;
+          align-items: center;
+        }
+
+        border-bottom: 0.8px solid #f1f3f3;
+      }
+    }
+
+    .sidebar-product-details {
+      @apply grid;
+      grid-template-columns: repeat(2, 45%);
+      justify-content: space-between;
+
+      &-created {
+        @apply flex flex-col justify-center items-center bg-white shadow rounded p-3;
+
+        span {
+          @apply text-slate-500;
+          font-size: 0.7rem;
+          font-family: almarai-light;
+        }
+
+        p span {
+          @apply text-slate-900 m-0.5;
+          font-size: 0.9rem;
+          font-weight: bold;
+          font-family: almarai-ex-bold;
+        }
+
+
+        p {
+          @apply flex flex-row;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+.categories {
+  .category-item {
+    @apply bg-green-100 text-green-400 rounded p-1;
+  }
+}
+
+.product__top {
+  @apply bg-white shadow p-3;
+  grid-area: content;
+  @apply grid mt-[60px] rounded;
+  justify-content: center;
+  align-items: center;
+  text-align: right;
+  /* @apply md:w-[730px] lg:w-[1000px] xl:w-[1200px]; */
+
+  grid-template-areas:
+    "image image image"
+    "categories categories categories"
+    "title title title"
+    "content content content"
+    "money money money"
+    "addToCart addToCart addToCart"
+    "footer footer footer";
+
+  @media screen and (min-width: 800px) {
+    justify-content: space-between;
+    grid-template-areas:
+      "categories categories categories"
+      "image title title"
+      "image content content"
+      "image money addToCart"
+      "footer footer footer";
+    grid-template-columns: 30% 20% 20% !important;
+  }
+
+  &__addToCart {
+    width: 100%;
+    height: 60px;
+    grid-area: addToCart;
+    font-size: 18px;
+    font-family: almarai-bold;
+    font-weight: bold;
+    @apply bg-blue-500 flex justify-center rounded items-center text-white mt-3 shadow;
+    position: relative;
+    transition: all 0.5s;
+
+    &::before {
+      content: "";
+      width: 200px;
+      height: 60px;
+      background-color: #818181;
+      position: absolute;
+      opacity: 0.1;
+      transform: scale(0);
+      border-radius: 100%;
+      @apply rounded;
+    }
+
+    &::after {
+      content: "";
+      width: 200px;
+      height: 60px;
+      background-color: #cac9c9;
+      position: absolute;
+      opacity: 0.2;
+      transform: scale(0);
+      transition: 0.5s all ease-out;
+      border-radius: 100%;
+      @apply rounded;
+    }
+  }
+
+  &__title {
+    @apply text-gray-700 mb-5 mt-3;
+    grid-area: title;
+    font-size: 1.8rem;
+    direction: rtl;
+    font-family: almarai-ex-bold;
+  }
+
+  &__footer {
+    @apply mt-5 border-slate-100 border-t-2 w-full p-3;
+    grid-area: footer;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-areas:
+      "right"
+      "social-media";
+
+    &-right {
+      grid-area: right;
+
+      &-like-box {
+        @apply flex justify-center items-center bg-red-500 rounded m-1 p-1 text-white font-bold;
+      }
+
+      &-comment-box {
+        @apply flex justify-center items-center bg-blue-500 rounded m-1 p-1 text-white font-bold;
+      }
+    }
+
+    &-social-media {
+      @apply text-right;
+      grid-area: social-media;
+    }
+
+    @media screen and (min-width: 600px) {
+      grid-template-areas: "social-media right";
+      justify-content: space-between;
+    }
+  }
+
+  &__money {
+    @apply text-gray-700 mt-3;
+    grid-area: money;
+    font-family: almarai-ex-bold;
+    font-size: 25px;
+    @apply text-center;
+  }
+
+  &__content {
+    font-family: markazi-md;
+    grid-area: content;
+    @apply text-gray-500;
+    font-size: 1.1rem;
+    direction: rtl;
+  }
+
+  &__categories {
+    @apply mt-3;
+    direction: rtl;
+
+    grid-area: categories;
+
+    &-item {
+      width: 100px;
+      height: 90px;
+      padding: 3px 15px 3px 15px;
+      @apply bg-green-200 rounded text-green-500 shadow;
+    }
+  }
+
+  &__image {
+    @apply rounded w-full h-[300px];
+    grid-area: image;
+  }
+}
+
+.full-right-to-left {
+  direction: rtl;
+  text-align: right;
+}

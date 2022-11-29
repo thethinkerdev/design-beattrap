@@ -1,0 +1,29 @@
+.shadow.active {
+  @apply z-[19] fixed left-0 bottom-0 w-full h-full opacity-30 bg-gray-300;
+}
+
+.like,
+.comment,
+.twitter,
+.telegram,
+.cart {
+  @apply w-[24px] h-[24px];
+}
+
+body {
+  background-color: #ebebec;
+  @apply m-1;
+  font-size: 16px;
+
+  .main-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 5px auto 0px auto;
+    @apply p-3;
+    main{
+      & > h2{
+        @apply text-right text-3xl text-blue-900 font-bold shadow-black mt-10;
+      }
+    }
+  }
+}

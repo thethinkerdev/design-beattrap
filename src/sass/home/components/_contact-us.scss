@@ -1,0 +1,15 @@
+.main-container {
+  &__contact-us {
+    &__box {
+      @apply bg-white rounded p-3 mt-10 text-right shadow;
+      direction: rtl;
+      &__title {
+        @apply text-green-500 font-bold text-xl;
+      }
+      &__body {
+        @apply mt-3 text-slate-800;
+        
+      }
+    }
+  }
+}

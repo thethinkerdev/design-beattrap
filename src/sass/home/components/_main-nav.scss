@@ -1,0 +1,109 @@
+#main-nav {
+  grid-area: header;
+
+  &-box {
+    @apply bg-white grid p-5 shadow;
+    grid-template-columns: 1fr 2fr 1fr;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+  }
+
+  &-items {
+    @apply mt-4 hidden relative md:flex justify-center text-right items-center relative;
+
+    ul {
+      @apply shadow-lg flex bg-slate-50 absolute justify-center rounded-[15px] p-1;
+      li {
+
+        @apply relative;
+        padding: 10px 10px 10px 20px;
+        height: 40px;
+        @apply z-[19] cursor-pointer transition-all rounded text-slate-900 hover:bg-blue-100 hover:text-blue-400;
+
+        ul {
+          @apply shadow hidden absolute right-[0] top-[40px] p-3 border-b-slate-400 border-b-[2.5px] w-[150px];
+          transition: 0.5s all ease-in-out;
+          ul {
+            @apply absolute top-0 left-[-150px];
+          }
+        }
+      }
+    }
+  }
+
+  &-logo {
+    img {
+      width: 60px;
+      min-width: 60px;
+      height: 60px;
+      @apply rounded-full cursor-pointer outline outline-2 outline-slate-800;
+    }
+  }
+
+  &-search {
+    width: 100%;
+    max-width: 580px;
+    @apply relative hidden sm:block;
+
+    form {
+      @apply sm:flex;
+    }
+
+    input {
+      direction: rtl;
+      @apply w-full p-3 text-right border-none rounded-xl outline-none bg-slate-100;
+      height: 40px;
+    }
+
+    svg {
+      width: 20px;
+      font-size: 15px;
+      @apply text-darkBlack absolute left-2 top-[10px];
+    }
+  }
+
+  &-profile {
+    @apply hidden sm:flex z-[20];
+    justify-content: center;
+    &-img {
+      width: 60px;
+      min-width: 60px;
+      height: 60px;
+      @apply rounded-full cursor-pointer outline outline-2 outline-rose-500;
+    }
+
+    &-list {
+      direction: rtl;
+      @apply hidden absolute rounded w-full bg-white p-4 w-[200px] mt-[50px];
+
+      li a {
+        display: flex;
+        direction: rtl;
+        @apply w-full p-2 rounded hover:bg-blue-100 hover:text-blue-400;
+
+        svg {
+          margin-left: 5px;
+        }
+      }
+
+      &.active {
+        @apply flex flex-col;
+      }
+    }
+  }
+}
+
+.login-register {
+  @apply flex;
+  a:nth-child(1) {
+    @apply bg-blue-500 text-white p-2 flex justify-center items-center rounded-l-lg;
+  }
+  a:nth-child(2) {
+    @apply bg-blue-200 text-blue-500 p-2 flex justify-center items-center rounded-r-lg;
+  }
+}
+
+#toggle-bar {
+  @apply mx-[10px] text-black cursor-pointer md:hidden absolute right-0;
+}

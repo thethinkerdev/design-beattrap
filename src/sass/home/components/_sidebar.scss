@@ -1,0 +1,89 @@
+#sidebar {
+  @apply bg-white fixed top-0 right-0;
+  width: 17.25rem;
+  height: 100%;
+  padding: 20px 0 20px;
+  right: -300px;
+  transition: 0.5s ease-in-out;
+  overflow: auto;
+  z-index: 20;
+}
+
+#logo-box {
+  @apply flex justify-center;
+}
+
+#sidebar img {
+  width: 50px;
+  height: 50px;
+  @apply rounded-full;
+}
+
+#sidebar svg {
+  width: 25px;
+  height: 25px;
+}
+
+#sidebar ul li {
+  @apply w-[90%] ml-2 p-2 rounded text-right border-r-2 border-transparent cursor-pointer;
+
+  svg {
+    @apply ml-2;
+  }
+}
+
+#sidebar ul li:hover {
+  @apply bg-blue-100 border-r-2 border-solid;
+}
+
+#sidebar ul li:hover {
+  a,
+  svg {
+    @apply text-blue-500;
+  }
+}
+
+#sidebar-close {
+  @apply top-[10px] left-[10px] flex items-center justify-center cursor-pointer;
+  width: 10px;
+  height: 10px;
+  font-size: 45px;
+  font-weight: bold;
+}
+
+#sidebar.active {
+  right: 0;
+}
+
+#sidebar-search-box {
+  display: flex;
+  align-items: center;
+  @apply rounded;
+  padding: 10px;
+  margin: 10px;
+}
+
+#sidebar-search-box input {
+  display: flex;
+  text-align: right;
+  outline: none;
+  border: none;
+  @apply w-full p-2 rounded text-slate-700 bg-slate-300 placeholder:text-slate-500;
+}
+
+#sidebar-search-box svg {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  margin-left: 10px;
+  @apply text-gray-500;
+}
+
+#sidebar ul li ul {
+  display: none;
+  transition: 0.6s all ease-in-out;
+}
+
+#sidebar ul li:hover > ul {
+  @apply block;
+}

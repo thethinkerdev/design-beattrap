@@ -1,0 +1,98 @@
+.main-container {
+  &__main {
+    @apply mt-10;
+    display: grid;
+    grid-template-areas: "sidebar content" "comments comments";
+    @media screen and (max-width: 935px) {
+      grid-template-areas: "content content" "sidebar sidebar" "comments comments";
+    }
+    grid-template-columns: minmax(200px, 300px) 1fr;
+    gap: 30px;
+    &__content {
+      @apply bg-white rounded shadow p-3 pb-0;
+      grid-area: content;
+      &__header {
+        &__box {
+          @apply flex justify-center items-center;
+          &__img {
+            @apply w-[400px] h-[300px];
+          }
+        }
+        &__title {
+          @apply text-2xl font-bold text-right mt-3;
+        }
+        &__footer {
+          @apply text-right border-b p-3;
+          & > * {
+            @apply text-slate-700 ml-3;
+            font-size: 0.9em;
+          }
+        }
+      }
+      &__body {
+        text-align: right;
+        direction: rtl;
+        @apply pb-10;
+      }
+      &__footer {
+        @apply pb-10 border-t p-3 flex justify-between items-center;
+        text-align: right;
+        &__categories {
+        }
+      }
+    }
+    &__sidebar {
+      grid-area: sidebar;
+      @apply rounded;
+
+      &__author {
+        @apply bg-white rounded p-3 shadow flex flex-col justify-start items-center;
+        img {
+          @apply w-[70px] h-[70px] rounded-full mb-3;
+        }
+        span {
+          @apply relative;
+          span {
+            @apply absolute text-rose-200 bg-rose-500 rounded shadow p-1 top-[-20px] left-0;
+            font-size: 0.7rem;
+          }
+        }
+        p {
+          direction: rtl;
+          @apply text-right bg-gray-100 rounded p-3 shadow mt-3;
+        }
+      }
+      &__related-posts {
+        @apply bg-white mt-3 rounded shadow p-3 text-right;
+        direction: rtl;
+        &__title {
+          @apply flex font-bold;
+          & > * {
+            @apply ml-1;
+          }
+        }
+        &__posts {
+          &__item {
+            @apply bg-gray-200 rounded shadow mt-3 p-3 relative overflow-hidden;
+            a::before {
+              content: "";
+              @apply absolute w-[24px] h-[24px] bg-rose-500 shadow rounded-full top-[-10px] right-[-10px];
+            }
+          }
+        }
+        &__see-more {
+          @apply flex mt-3 shadow bg-rose-100 text-rose-500 cursor-pointer rounded p-3 flex justify-center items-center;
+          & > * {
+            @apply ml-1;
+          }
+        }
+      }
+      &__post-info{
+        
+      }
+    }
+    &__comments {
+      grid-area: comments;
+    }
+  }
+}

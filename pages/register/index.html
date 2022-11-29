@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penguin :)</title>
+    <script type="module" src="../../src/ts/auth/auth.ts"></script>
+</head>
+
+<body>
+    <form class="form" action=".">
+        <img class="form__logo" src="/public/assets/images/image-not-found.jpg" alt="">
+        <div class="form__box">
+            <label class="form__box__label" for="name">نام</label>
+            <input id="name" type="text" class="form__box__input form__box__input--wrong">
+            <div class="form__box__message">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+                </svg>
+                <span>لطفا نام خود را وارد نمایید!</span>
+            </div>
+        </div>
+        <div class="form__box">
+            <label class="form__box__label" for="email">ایمیل</label>
+            <input id="email" type="text" class="form__box__input form__box__input--correct">
+        </div>
+        <div class="form__box">
+            <label class="form__box__label" for="password">پسورد</label>
+            <input id="password" type="text" class="form__box__input">
+        </div>
+        <div class="form__box">
+            <label class="form__box__label" for="confirmation_password">تکرار پسورد</label>
+            <input id="confirmation_password" type="text" class="form__box__input form__box__input--wrong">
+        </div>
+
+        <button class="form__btn">ثبت نام</button>
+
+        <span class="form__rules">ثبت نام شما به معنای پذیرفتن قوانین بیت ترپ می‌باشد.</span>
+    </form>
+</body>
+
+</html>

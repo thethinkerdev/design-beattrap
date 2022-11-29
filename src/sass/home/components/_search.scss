@@ -1,0 +1,24 @@
+.main-container-search {
+  @apply grid;
+
+  grid-template-areas:
+    "headFilter headFilter"
+    "contentFiltered sidebarFilter";
+
+  &__filter-head {
+    grid-area: headFilter;
+    @apply flex justify-between p-5 bg-white rounded shadow-lg text-right;
+    direction: rtl;
+
+  }
+  &__filter-sidebar {
+    grid-area: sidebarFilter;
+  }
+  &__filtered-content {
+    grid-area: contentFiltered;
+  }
+}
+
+select{
+    
+}
