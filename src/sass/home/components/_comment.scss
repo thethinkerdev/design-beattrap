@@ -69,12 +69,15 @@
     }
     &__reply-this-comment {
       grid-area: reply-the-comment;
-      @apply p-3 bg-slate-100 rounded mt-2;
+      @apply hidden p-3 bg-slate-100 rounded mt-2;
       textarea {
         @apply w-full rounded shadow p-3 outline-none border-none;
       }
       button {
         @apply bg-green-500 p-3 text-white shadow px-5 rounded-bl-md rounded-tr-md;
+      }
+      &--active{
+        @apply block;
       }
     }
   }
