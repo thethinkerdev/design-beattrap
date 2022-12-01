@@ -1,24 +1,29 @@
 .main-container-search {
-  @apply grid;
-
-  grid-template-areas:
-    "headFilter headFilter"
-    "contentFiltered sidebarFilter";
-
-  &__filter-head {
-    grid-area: headFilter;
-    @apply flex justify-between p-5 bg-white rounded shadow-lg text-right;
+  &__for {
     direction: rtl;
-
+    @apply flex justify-start items-center text-right;
+    &__label {
+    }
+    &__value {
+      @apply text-2xl mr-1;
+    }
   }
-  &__filter-sidebar {
-    grid-area: sidebarFilter;
+  &__list {
+    @apply flex justify-end bg-white mt-3 p-3 rounded shadow;
+    &__item {
+      @apply ml-5 rounded text-gray-500;
+      &--active {
+        @apply text-white shadow bg-blue-500;
+      }
+      &:hover:not(&--active) {
+        @apply bg-slate-50;
+      }
+      a {
+        @apply p-3 px-[20px] flex w-full h-full;
+        span {
+          @apply ml-2;
+        }
+      }
+    }
   }
-  &__filtered-content {
-    grid-area: contentFiltered;
-  }
-}
-
-select{
-    
 }

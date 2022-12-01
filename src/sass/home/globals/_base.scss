@@ -20,9 +20,16 @@ body {
     max-width: 1200px;
     margin: 5px auto 0px auto;
     @apply p-3;
-    main{
-      & > h2{
-        @apply text-right text-3xl text-blue-900 font-bold shadow-black mt-10;
+    main {
+      direction: rtl;
+      & div.flex.justify-between {
+        @apply items-center;
+        h2 {
+          @apply text-right text-3xl text-blue-900 font-bold shadow-black;
+        }
+        a{
+          @apply text-slate-500;
+        }
       }
     }
   }
