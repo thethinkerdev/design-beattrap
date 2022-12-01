@@ -9,7 +9,7 @@
     }
   }
   &__list {
-    @apply flex justify-end bg-white mt-3 p-3 rounded shadow;
+    @apply flex justify-start bg-white mt-3 p-3 rounded shadow;
     &__item {
       @apply ml-5 rounded text-gray-500;
       &--active {
