@@ -1,66 +1,90 @@
 .card-list-products {
-    direction: rtl;
-    @apply mt-[50px];
-    @apply grid justify-center items-center gap-10 /* z-0 */;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 300px));
-  
-    .card {
-      @apply w-[250px] max-w-[300px] relative shadow;
-      height: 350px;
-      @apply bg-slate-50 rounded-xl p-3;
-  
-      &-head {
-        @apply flex justify-center relative h-[110px];
-  
-        div {
-          @apply absolute top-[-30px] rounded-lg;
-  
-          img {
-            @apply w-[230px] h-[132px] rounded-lg;
+  @apply grid justify-center mt-10 gap-16 text-right items-center;
+  direction: rtl;
+  grid-template-columns: repeat(auto-fill, 320px);
+
+  &__card {
+    @apply grid p-3 bg-white rounded shadow-xl relative;
+    grid-template-areas: "img img" "title title" "author author" "footer footer";
+
+    row-gap: 15px;
+    &__overflow-hidden {
+      grid-area: img;
+      @apply overflow-hidden rounded  relative shadow-xl;
+      &__img {
+        @apply w-full h-[250px] object-cover   transform transition duration-200 hover:scale-110 rounded;
+      }
+    }
+    &__title {
+      grid-area: title;
+      @apply text-right text-xl font-bold;
+    }
+    &__author {
+      @apply flex items-center;
+      grid-area: author;
+
+      &__img {
+        @apply ml-1 w-[34px] w-[34px] rounded-full shadow;
+      }
+      &__name {
+      }
+    }
+
+    &__footer {
+      @apply flex justify-between;
+      grid-area: footer;
+      &__comment-count {
+        @apply ml-1 flex justify-center cursor-pointer items-center text-slate-500 shadow  px-1 bg-slate-100 rounded transition-all duration-200;
+        font-size: 0.9em;
+        svg {
+          @apply ml-[0.5px] mt-[2px];
+          width: 1em;
+          height: 1em;
+        }
+        &:hover {
+          @apply bg-slate-500 text-white;
+        }
+      }
+
+      &__like {
+        @apply flex justify-center cursor-pointer items-center text-rose-500 shadow  px-1 bg-rose-100 rounded transition-all duration-200;
+        font-size: 0.9em;
+        svg {
+          @apply ml-[0.5px] mt-[2px];
+          width: 1em;
+          height: 1em;
+        }
+        &:hover {
+          @apply bg-rose-500 text-white;
+        }
+      }
+      &__price {
+        @apply relative;
+        &__discount {
+          @apply absolute top-[-20px] left-0 shadow bg-rose-100 text-rose-500 rounded-full;
+          &__value {
+            font-size: 0.8rem;
+
+            &::before {
+              content: "";
+              @apply w-full h-[0.8px] bg-rose-500 absolute top-[13px];
+            }
+          }
+          &__currency {
+            font-size: 0.6rem;
           }
         }
-      }
-  
-      &-body {
-        @apply text-right w-full;
-  
-        h2 {
-          @apply hover:text-blue-400 inline-flex;
-          font-family: almarai-bold;
-        }
-  
-        p {
-          @apply text-gray-500;
-          font-size: 0.77em;
-          direction: rtl;
-          font-family: iransans;
-        }
-      }
-  
-      &-footer {
-        @apply absolute bottom-2 p-3 left-0 w-full flex justify-between items-center pt-1 border-separate border-t-2 text-right;
-        direction: rtl;
-  
-        .price {
-          &-value {
+        &__final {
+          &__value {
             font-size: 1.3rem;
             font-weight: bold;
           }
-  
-          &-currency {
-            font-size: 0.8rem;
-          }
-        }
-  
-        .like {
-          @apply w-max bg-rose-300 text-rose-700 rounded px-1 flex justify-center items-center cursor-pointer transition-all;
-          @apply hover:bg-rose-600 hover:text-white text-base;
-  
-          svg {
-            width: 1em;
-            height: 1sem;
+          &__currency {
+            font-size: 0.9rem;
+            font-weight: lighter;
           }
         }
       }
     }
   }
+}

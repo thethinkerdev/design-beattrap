@@ -45,9 +45,9 @@
 
       &-info {
         text-align: center;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         grid-area: owner_info;
-        @apply text-slate-500;
+        @apply text-slate-500 opacity-90 font-bold;
       }
 
       &-name {
@@ -59,9 +59,9 @@
 
       p {
         grid-area: info;
-        font-size: 0.8rem;
+        font-size: 1.2rem;
         text-align: justify;
-        @apply text-slate-500;
+        @apply text-slate-500 opacity-80;
       }
     }
 
@@ -110,14 +110,14 @@
         span {
           @apply text-slate-500;
           font-size: 0.7rem;
-          font-family: almarai-light;
+          font-family: "mk-regular";
         }
 
         p span {
           @apply text-slate-900 m-0.5;
           font-size: 0.9rem;
           font-weight: bold;
-          font-family: almarai-ex-bold;
+          font-family: "mk-bold";
         }
 
 
@@ -170,7 +170,7 @@
     height: 60px;
     grid-area: addToCart;
     font-size: 18px;
-    font-family: almarai-bold;
+    font-family: "mk-bold";
     font-weight: bold;
     @apply bg-blue-500 flex justify-center rounded items-center text-white mt-3 shadow;
     position: relative;
@@ -207,7 +207,7 @@
     grid-area: title;
     font-size: 1.8rem;
     direction: rtl;
-    font-family: almarai-ex-bold;
+    font-family: "mk-bold";
   }
 
   &__footer {
@@ -246,16 +246,16 @@
   &__money {
     @apply text-gray-700 mt-3;
     grid-area: money;
-    font-family: almarai-ex-bold;
+    font-family: "mk-bold";
     font-size: 25px;
     @apply text-center;
   }
 
   &__content {
-    font-family: markazi-md;
+    font-family: "mk-regular";
     grid-area: content;
     @apply text-gray-500;
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     direction: rtl;
   }
 

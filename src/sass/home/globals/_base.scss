@@ -13,7 +13,8 @@
 body {
   background-color: #ebebec;
   @apply m-1;
-  font-size: 16px;
+  font-size: 21px;
+  font-family: "mk-medium";
 
   .main-container {
     width: 100%;
@@ -23,11 +24,11 @@ body {
     main {
       direction: rtl;
       & div.flex.justify-between {
-        @apply items-center;
+        @apply flex-wrap items-center;
         h2 {
           @apply text-right text-3xl text-blue-900 font-bold shadow-black;
         }
-        a{
+        a {
           @apply text-slate-500;
         }
       }

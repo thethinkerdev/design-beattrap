@@ -4,14 +4,14 @@
   grid-template-columns: repeat(auto-fill, 320px);
 
   &__card {
-    @apply grid p-3 bg-white rounded shadow;
-    grid-template-areas: "img img" "author_category" "author";
+    @apply grid p-3 bg-white rounded shadow-xl;
+    grid-template-areas: "img img" "author author" "footer";
 
     row-gap: 15px;
     &__overflow-hidden {
-      @apply overflow-hidden;
+      @apply overflow-hidden rounded  shadow;
       &__img {
-        @apply w-full h-full object-cover transform transition duration-200 hover:scale-110;
+        @apply w-full h-[250px] object-cover transform transition duration-200 hover:scale-110 rounded;
       }
     }
     &__title {
@@ -22,7 +22,7 @@
       &__author {
         @apply flex items-center;
         &__img {
-          @apply ml-1 w-[34px] w-[34px] rounded-full;
+          @apply ml-1 w-[34px] w-[34px] rounded-full shadow-xl;
         }
         &__name {
         }
