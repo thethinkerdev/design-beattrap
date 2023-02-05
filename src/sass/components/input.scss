@@ -1,0 +1,8 @@
+.input{
+  &--in-dark{
+    @apply bg-dark-900 text-white rounded;
+    &--no-bg{
+      @apply bg-transparent text-white;
+    }
+  }
+}

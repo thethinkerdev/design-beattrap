@@ -1,0 +1,12 @@
+.btn{
+  &--in-dark{
+    @apply shadow px-5 py-3 rounded-full bg-white;
+
+    &--no-bg{
+      @apply bg-transparent text-white;
+    }
+
+  }
+}
+
+

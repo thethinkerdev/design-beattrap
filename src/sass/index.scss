@@ -1,3 +1,15 @@
+@import "font-awesome";
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import "components/btn.scss";
+@import "components/input.scss";
+
+@layer base {
+  input{
+    @apply focus:outline-none shadow rounded;
+  }
+}
+html{
+  direction: rtl;
+}
