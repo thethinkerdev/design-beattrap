@@ -6,3 +6,4 @@ import "./comment.ts";
 import "./documentClick";
 import "./likes";
 import "./shadow";
+import "font-awesome/scss/font-awesome.scss"
