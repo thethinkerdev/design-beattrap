@@ -45,15 +45,15 @@
 
     &__created-at {
       grid-area: created_at;
-      @apply text-left text-gray-700;
+      @apply text-left text-gray-700 text-base;
     }
     &__text {
       grid-area: text;
-      @apply text-gray-600 p-3;
+      @apply text-gray-600 p-3 text-base;
     }
 
     &__reply {
-      @apply inline-flex w-max cursor-pointer mt-3 select-none;
+      @apply inline-flex w-max cursor-pointer mt-3 select-none text-base;
       grid-area: reply;
 
       & > * {
@@ -62,14 +62,14 @@
     }
     &__like {
       grid-area: like;
-      @apply inline-flex justify-end text-gray-600;
+      @apply inline-flex justify-end text-gray-600 text-base;
       div > * {
         @apply m-[2px];
       }
     }
     &__reply-this-comment {
       grid-area: reply-the-comment;
-      @apply hidden p-3 bg-slate-100 rounded mt-2;
+      @apply hidden p-3 bg-slate-100 rounded mt-2 text-base;
       textarea {
         @apply w-full rounded shadow p-3 outline-none border-none;
       }

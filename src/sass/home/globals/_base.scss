@@ -11,10 +11,8 @@
 }
 
 body {
-  background-color: #ebebec;
-  @apply m-1;
-  font-size: 21px;
-  font-family: "mk-medium";
+  background-color: #f5f5f5;
+  @apply text-base;
 
   .main-container {
     width: 100%;

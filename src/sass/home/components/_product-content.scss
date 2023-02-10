@@ -20,7 +20,7 @@
   &__body {
     grid-area: content;
     direction: rtl;
-    @apply bg-white shadow rounded p-[20px] text-lg text-right;
+    @apply bg-white shadow rounded p-[20px] text-base text-right;
   }
 
   &__sidebar {
@@ -44,24 +44,19 @@
       }
 
       &-info {
-        text-align: center;
-        font-size: 1.2rem;
         grid-area: owner_info;
-        @apply text-slate-500 opacity-90 font-bold;
+        @apply text-slate-500 opacity-90 font-bold text-base text-center;
       }
 
       &-name {
-        text-align: center;
-        font-weight: bold;
         grid-area: owner_name;
-        @apply text-gray-900;
+        @apply text-gray-900 text-lg text-center font-bold;
       }
 
       p {
         grid-area: info;
-        font-size: 1.2rem;
         text-align: justify;
-        @apply text-slate-500 opacity-80;
+        @apply text-slate-500 opacity-80 text-base;
       }
     }
 
@@ -70,78 +65,52 @@
       @apply bg-white shadow rounded p-3 text-right mt-3;
 
       h5 {
-        @apply p-3;
-        border-bottom: 1px solid #ecf0f4;
+        @apply p-3 text-lg font-bold;
       }
 
       li {
         direction: rtl;
-        text-align: right;
-        @apply p-2 mr-5;
-        position: relative;
+        @apply p-2 mr-5 text-right relative text-base;
         counter-increment: index;
+        border-top: 1px solid #ecf0f4;
 
         &::before {
           content: counters(index, ".");
           position: absolute;
           right: -25px;
           top: 25%;
-          @apply text-slate-800;
           width: 8px;
-          font-size: 0.9rem;
-          display: flex;
-          @apply text-white bg-red-500 px-3 rounded;
-          justify-content: center;
-          align-items: center;
+          @apply absolute flex text-base text-white bg-rose-600 shadow-lg w-[25px] rounded;
+          @apply justify-center items-center;
+
         }
 
-        border-bottom: 0.8px solid #f1f3f3;
       }
     }
 
     .sidebar-product-details {
-      @apply grid;
-      grid-template-columns: repeat(2, 45%);
-      justify-content: space-between;
-
-      &-created {
-        @apply flex flex-col justify-center items-center bg-white shadow rounded p-3;
-
-        span {
-          @apply text-slate-800 text-sm opacity-50;
-        }
-
-        p span {
-          @apply text-slate-900 m-0.5;
-        }
+      @apply grid gap-10 justify-between;
+      grid-template-columns: repeat(2,1fr);
 
 
-        p {
-          font-weight: bold;
-        }
-        &.music-time{
-          @apply  font-bold bg-rose-50;
-          box-shadow: 0 0 3px 3px #f43f5e;
-          .icon{
-            @apply text-lg;
-          }
-          .label{}
-          .value{}
-          .only-value{
-            @apply text-white text-2xl;
-          }
-        }
-        &.music-date{
-
-        }
+      &-created{
+        @apply bg-white text-center p-3 rounded shadow;
       }
+
+      .icon{
+        @apply font-bold text-2xl;
+      }
+      .value{
+        @apply text-base;
+      }
+
     }
   }
 }
 
 
 .product__top {
-  @apply bg-white shadow-2xl p-3;
+  @apply bg-white shadow p-3;
   grid-area: content;
   @apply grid mt-[60px] rounded;
   justify-content: center;
@@ -190,9 +159,6 @@
     i{
       @apply text-2xl;
     }
-    span.label{
-      @apply text-lg;
-    }
 
     &__box{
       @apply flex gap-3 justify-center items-center;
@@ -218,7 +184,7 @@
   }
 
   &__content {
-    @apply text-lg;
+    @apply text-base;
     grid-area: content;
   }
 

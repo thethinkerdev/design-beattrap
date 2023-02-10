@@ -10,14 +10,13 @@
   }
 
   &-items {
-    @apply mt-4 hidden relative md:flex justify-center text-right items-center relative;
+    @apply mt-4 hidden relative md:flex justify-center text-right items-center;
 
     ul {
       @apply shadow-lg flex bg-slate-50 absolute justify-center rounded-[15px] p-1;
       li {
 
-        @apply relative;
-        padding: 10px 10px 10px 20px;
+        @apply relative p-3 text-base;
         height: 40px;
         @apply z-[19] cursor-pointer transition-all rounded text-slate-900 hover:bg-blue-100 hover:text-blue-400;
 
@@ -44,7 +43,7 @@
   &-search {
     width: 100%;
     max-width: 580px;
-    @apply relative hidden sm:block;
+    @apply relative hidden sm:block text-base;
 
     form {
       @apply sm:flex;
@@ -75,7 +74,7 @@
 
     &-list {
       direction: rtl;
-      @apply hidden absolute rounded w-full bg-white p-4 w-[200px] mt-[50px];
+      @apply hidden absolute rounded bg-white p-4 w-[200px] mt-[50px];
 
       li a {
         display: flex;
@@ -95,7 +94,7 @@
 }
 
 .login-register {
-  @apply flex;
+  @apply flex text-base;
   a:nth-child(1) {
     @apply bg-blue-500 text-white p-2 flex justify-center items-center rounded-l-lg;
   }
